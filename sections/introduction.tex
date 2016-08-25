@@ -1,6 +1,44 @@
 
 %%%% OK
 
+% Basic context
+
+A lot of attention is turn on the crowd-sensing platforms that allow to collect and aggregate knowledge from a large number of devices populating our world.
+APISENSE~\cite{DBLP:conf/dais/HadererRS13} is a participatory platform that provides to scientists an easy way to deploy their sensing experiments in the wild.
+This platform allows end-users to participate to data collect campaigns.
+The data collected by this platform can be used by scientists that are able to test their theories on real datasets instead of simulated one.
+
+% Problem description
+
+In APISENSE, scientists create data collect campaigns that recover data from the users' devices that have chosen to participate--data recovery is made via the APISENSE Android application installed on the users' devices.
+Once a user agree to participate in a specific campaign, the collecting process is completely automatic and no interactions are requested to the user sending data to a collect server.
+The collect servers can be the central server or server managed by external organizations.
+All external servers send their collected data to the central server.
+To sum up, we have a system where users send their own produced data directly to a central server or to an external one that relay to the central server.
+In this case, a collect server knows to whom is each data collected.
+Despite the fact that the central server can be 100\% trusted by the users, a serious issue regarding the users' privacy may appear if this server is hacked.
+Furthermore, the servers maintain by organization provide no guarantee on their use of data before forward their data to the central server.
+A malicious server could store each collected data before forward it to the central server.
+This treat will be totally transparent and undetectable by the central server.
+
+% Deficiencies with previous approaches
+
+The APISENSE platform implements some privacy protecting methods on the server side and user side.
+For instance, on the server side, different filters can be enabled by a scientist to enforce the users' privacy, but filter configurations remain to the scientist that has the hand on what filter he wants to enable for a specific data collect.
+On the user side, a user can manage his privacy concerns by configuring constrain conditions in which experiments can collect data.
+The methods implemented by the platform require that each part, the scientist and the user are aware of the risks of their privacy.
+Moreover, existing privacy approaches are generally made on server side like k-Anonymity based methods~\cite{DBLP:journals/ijufks/Sweene02}~\cite{DBLP:conf/icde/LiLV07}~\cite{DBLP:conf/icde/MachanavajjhalaGKV06}.
+Users don't want to put all their trust on servers by hoping, fingers crossed, that their data will be in a safe place and servers will always protect their privacy.
+
+% Basic idea/approach of the paper
+
+The idea behind this contribution is to protect by hiding the data producers from potentially malicious servers by providing a solution that could scramble the data before sending it to the server.
+The proposed approach uses a collaborative dissemination process where the users of the system exchange their data with each other before sending it to a collect server.
+By this way, a server that receives data from a user will be unable to claim if these data are produced by the sender or not.
+The final goal is to reach to a platform that could use Privacy by design-principles~\cite{langheinrich2001privacy} where, by conception a system could enhance the users' privacy without the need of more requirements.
+
+% Contributions of the paper
+
 Our two contributions for crowd-sensing platforms are as follows:
 \begin{itemize}
 	\item Foug\`ere, a data dissemination library that uses a distance notion to disseminate data.
@@ -10,6 +48,13 @@ Our two contributions for crowd-sensing platforms are as follows:
 	AndroFleet trends to be as near as possible to the real usage of the application on real mobile devices.
 \end{itemize}
 
-The reminder of this paper is structured as follows. In Section \ref{sec:context_motivation} we introduce the context and motivations that remain to this work. Section \ref{sec:contribution} presents the principles used by the Foug\`ere library. Section \ref{sec:implementation_details} describes important points of Foug\`ere. Then, in the Section \ref{sec:evaluation} we present AndroFleet and the results of the contribution. Finally, in Section \ref{sec:conclusion_perspectives} we summarize and discuss future possible works.
+% Textual contents description
+
+The reminder of this paper is structured as follows.
+In Section~\ref{sec:context_motivation} we introduce the context and motivations that remain to this work.
+Section~\ref{sec:contribution} presents the principles used by the Foug\`ere library.
+Section~\ref{sec:implementation_details} describes important points in the Foug\`ere implementation.
+Then, in the Section~\ref{sec:evaluation} we present AndroFleet and the results of the contribution.
+Finally, in Section~\ref{sec:conclusion_perspectives} we summarize and discuss future possible works.
 
 %%%% END OK
