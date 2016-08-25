@@ -1,0 +1,74 @@
+
+
+
+
+A FougereModule must have a ratio value.
+This ratio value is used by Foug\`ere when it allocate data to the different modules.
+The sum of module ratios activated cannot be up to 100.
+Default module ratios are 60 for the WiFiDirect module, 30 for the Social module and 10 for the Contextual module -- 60\% of total data to the WiFiDirect module.
+These ratios can be dynamically adapted during the application runtime.
+
+
+
+
+
+
+We develop a library called \textit{Foug\`ere}\footnote{Foug\`ere is a french word that translate to "fern" in english. This plant symbolize the trust.}.
+Foug\`ere come with a new principle of distance calculation to auto-adapt the data dissemination.
+
+\subsection{Neighboring Sampling}
+
+Foug\`ere uses a principle of neighbor.
+The library can have various types of neighbors.
+Our implementation includes 3 different types of neighbors: \textbf{Physical} neighbors (Wi-Fi Direct, Bluetooth), \textbf{Social} neighbors (Familly, Friends, colleagues) and \textbf{Contextual} neighbors (other participants to the same experiment).
+
+We want to be sure that the data will be propagated.
+We assume that the server don't know what are the Social relation that exist between different users.
+Trusted social peers are only known by the user.
+
+30\% of data are sended by the Social
+
+
+Explain Contextual -> data collect campaign.
+
+\subsection{Distance Evaluation}
+
+Data to disseminate are allocate to the different types available.
+The allocation is made in function of each type score.
+Type score are regularly updated in function of the previous dissemination result.
+
+For instance, if the user meet very rarely other devices, the score is adapted and a lower amount of data will be allocated to the Wi-Fi Direct.
+
+We can choose, for a better privacy, to select what part enabled. For instance, we can enable only dissemination by physical way.
+
+A score is calculated to allocate data that will be disseminated.
+
+At the allocation phase, for each data we choose a random number with the probability relative to each type score. 
+
+Each time a data is sended with success, the score for the specific type is incremented.
+
+\subsection{Probabilist Data Dissemination}
+
+
+
+A Time to Live (TTL) value is define for each data.
+This TTL warrants a minimum number of transmission before the data is reported to the server.
+
+The data are encrypted with an asymmetric encryption by using the server public key to prevent from curious devices. Only the server can read the data and see his content.
+
+Each data has a dissemination value.
+This value is used to determine the number of sending the data will be.
+
+60\% of data go in WiFi-Direct pool, 30\% in Social pool and 10\% in the Contextal pool.
+Why ? because we divide the dissemination. Without this repartition, if no data are sended by WiFi-Direct, we avoid the fact that all data are disseminate through a single road.
+We let a chance that data are realocated to WiFi-Direct and disseminated through that channel.
+
+We send the same data to, at least, 3 different neighbors.
+
+At the startup, each neighbor has a chance of 0.5 to send a data to it. Each time an interaction is made with a neighbor, the chance to send it a data decrease. If no interaction is decided, we increase the chance for the next time.
+
+A notion of history is include to avoid multiple exchange with the same neighbor in a time window.
+
+When a data is received, it is store in the main database and will be schedule to different module at an other time.
+
+Data that are sent to another peer as keep in the current bucket and will be re-allocated the next time.

@@ -1,0 +1,203 @@
+
+%%%% OK
+
+In this section, we discuss the relevant literature about privacy-preserving data dissemination, privacy in Mobile Crowd Sensing (MCS), location-based privacy and related work on mobile devices emulation.
+
+\subsection{Privacy-Preserving Data Dissemination}
+
+%%%% END OK
+
+
+Some reseach works enhence 
+
+where the user is put on the center of the privacy-preserving of the system.
+Research works have been made in the way to enhance the power of the users and preserve the privacy of the data exchanged. 
+
+
+
+Lilien et al.~\cite{DBLP:journals/tsmc/LilienB06} propose a kind of data self destroyable by coupling sensitive data with metadata that degrade data in sensible environments.
+For their, in a data exchange, there are 1 entity that is weaker than the other. 
+They name it asymmetric trust relationship.
+The privacy is generally a trade for trust improvement when communicating.
+Their approach do not anonymize.
+Their focus is on privacy by adding meta-data that contain producer.
+In this case requester must be approved by producer to access the data.
+Their technic include a data self destroy concept that is automatically activated when treat is detected.
+Finally, they introduce a data evaporation principle using a notion of distance.
+They talk about trust distance and use it to degrade quality of data when distance is not sufficient.
+They do not use their distance notion for the dissemination process like we do.
+
+Singh et al.~\cite{DBLP:conf/icdcs/SinghUSV12} propose a protocol that disseminate data among users that have trust relationships.
+They use users relashionship to construct a new privacy preserving graph to disseminate data between users. 
+We use the principle of social trust graph to disseminate data between trusted users.
+
+P. Zhong and R.Lu~\cite{DBLP:conf/iccoms/ZhongL14} propose a data dissemination protocol called PAD.
+This protocol use principle called active user which select the most active users to deliver more efficiently a message.
+The proposition uses the Paillier cryptosystem to encrypt data.
+This cryptosystem provide a way to add encrypted data to a previous encrypted data without know it. 
+The protocol is tested in a simulator but not in a real case.
+
+%%%% OK
+
+Another usage for data dissemination protocols is proposed by Boutet et al.~\cite{DBLP:journals/computing/BoutetFGJK16}.
+They propose a mechanism of collaborative filter that do not reveal the participants' filter preferences.
+Instead of only sending the data to other participants, a data dissemination protocol can filter the data--according to the predefined participant rules--that pass through the different participants.
+Their mechanism is capable to automatically drop the data that could leak a bit too much information about a user.
+
+Lu et al.~\cite{DBLP:conf/infocom/LuLSCS13} propose a scheme for opportunistic network called Incentive and Privacy-Aware data Dissemination (IPAD).
+Their solution uses a social layer that permits the dissemination through trusted nodes.
+We use their social notion in our solution by permitting a dissemination through a possible trusted set of other participants.
+
+For some applications, the response time is important (e.g. in localized based services).
+Private Pooling, the collaborative sensing protocol proposed by Wiesner et al.~\cite{DBLP:conf/mobisec/WiesnerDD11} focuses on decoupling the data from its producers.
+Their protocol reaches to break the linkability of the data to a specific user.
+They do not discuss possible advantages of using proximity technology like Bluetooth or WiFi-Direct.
+Their approach requires a network connection to work.
+Unlike our approach, their case of study required a very short responds time.
+Their requirement is not important for us because, in a case where the data are Geo-located, introducing a delay in the exchange can be better in a privacy-preserving view.
+
+In the cases where the data transmission delay is not important, the users of the system can exchange and store temporarily the data received by the others before resend it later.
+Guo et al.~\cite{DBLP:conf/infocom/GuoZYF13} propose a dissemination scheme for delay tolerant networks that is based on users similarities via attributes like position, language, country, etc.
+In their scheme, a user shares his data with others only where their profiles are close enough to his own profile.
+Unlike our evaluation, they consider that all users are always close enough to communicate that is not always the case--by far--in reality.
+
+Finally, the gossip-based protocols are very popular in applications that contain a large number of participants because of the reliability and the scalability of these types of protocols.
+A generic framework proposed by Jelasity et al.~\cite{DBLP:conf/middleware/JelasityGKS04} permits to create peer sampling services based on gossip communication protocols.
+They compare the convergence and the randomness of different gossip based approaches and conclude that gossip-base protocols are reliable and scalable.
+
+\subsection{Privacy in MCS}
+
+%%%% END OK
+
+Many application in participatory sensing systems are not used because of privacy concerns. 
+One of the main problem is to keep the quality of a data.
+The most important challenge in participatory sensing system is to preserve the privacy of the users.
+
+Vergara-Laurens et al.~\cite{DBLP:conf/percom/Vergara-LaurensML14} propose  a privacy-preserving mechanism to anonymize data without lost the data quality.
+Their approach is not decentralized.
+Their method calculate POI dynamically.
+Each time a data is report by a user, a proxy server recalculate a new POI according to the data value that is reported.
+
+Boutsis and Kalogeraki~\cite{DBLP:conf/percom/BoutsisK13} introduce LOCATE, their participatory sensing middleware for the Android platform that preserve users privacy -- in particular for the location data.
+They say that current solution that try to preserve privacy in location-based databases are centralized.
+These solutions need to be made on the server side like APISENSE for example.
+Participatory systems try to maintain the privacy on the user side, before sending the data to the server.
+Their work is based on misco, a MapReduce system for mobile devices.
+Their tool does not take part of proximity exchange technology like bluetooth or WiFi-Direct.
+It uses WiFi and 3G networks to exchange data.
+
+%
+Users may not want to contribute due to possible privacy leakage and lack of incentives.
+%
+
+Li and Cao~\cite{DBLP:conf/percom/LiC13} propose a participatory reward system for the collaborative mobile sensing systems.
+They provide a schemes where users earn credits when they contribute.
+These credit can be exchange after by converting it to real money or pay for data collect.
+Their schemes protect users that contribute to the system.
+They propose 2 solutions: one with a trusted third party and the second without.
+
+Groat et al.~\cite{DBLP:conf/percom/GroatEHHF12} present a scheme for participatory sensing that preserve users privacy for multidimensional data by using negative surveys.
+Their method perturb the data that hide the real user location.
+This kind of approach permit to not encrypt data before sending it.
+This permit a gain of data transmition cost.
+Their approach enable to parametrize privacy and accuracy.
+Their approach is useful in the case of data accuracy can be degraded.
+
+%%%% OK
+
+\subsection{Location-Based Privacy}
+
+%%%% END OK
+
+k-anonymity methods can be applied on location based data by garantee that at least k - 1 other people is in the cloaked area.
+
+Approach implying central server that knows everybody's location and determine cloaked area (require to trust the server).
+
+An other one will be that users self determine cloaked area in function of other users in his environment (require to trust in other users).
+
+Approach with central server have a drawback because this is a single point of failure
+
+Anonimization is the name like of data transformation that try to preserve users' privacy.
+Location data expose the user to substancial privacy treat.
+These kind of data are reveal a lot of informations about users like health informations, path habits, etc.
+The identity of a user can be determined with anonymized location data.
+
+Terrovitis~\cite{DBLP:journals/sigkdd/Terrovitis11} provide an overview of attack scenarii, data transformations and privacy garanties on location data.
+Method well known like k-anonymity and l-diversity can hide user and prevent against linkage.
+His focus is on privacy preserving data dissemination scenarii.
+The predominant paradigm required third party server that provide alternative location instead of real user location.
+The other solution is to send multiple location to hide the real one.
+Solution include a trusted server that works as proxy to hide real user location.
+Solution without trusted server required an obfuscation on the user side.
+In the case where users can communicate with each others, two scenarios emerge. One where user does not trust the server nor the other users and one where users trust each other but does not trust the server.
+This second scenario is our case of study.
+Data transformation and protection methods. 
+A trade-off need to be found between data accuracy and privacy.
+Technics exist like spatial cloaking that generalize a location to an area or for example transformation technics that split the real location with an other.
+Others technics uses dummy locations where the real user location is a subset of the location area requested.
+Finally, generally location data are associated with timestamps.
+This last method can be applicable in off-line application that does not required real time informations.
+He shows that systems without an anonymizer are close to use the creation of equivalence classes or spatial cloaking.
+
+Werner~\cite{DBLP:conf/mobisec/Werner10} propose an approach to protect users privacy in location based services.
+He propose an approach to exchange location data.
+Exchange is made between two users that want to know where are each other and receive notifications where their are close.
+He made it by sending encrypted data to server with identifier that correspond to a user.
+System uses asymetric encryption.
+Only receiver can decrypt it and show the location.
+He propose a solution where company want to offer promotion for example.
+His solution is to generalize the user location to a larger area and recover all services in the area.
+Then user filter it and get only services that are close to him.
+Users exchange public keys via sms or qrcode.
+No third server is required to deliver these keys.
+
+Zhong and Hengartner~\cite{DBLP:conf/percom/ZhongH09} propose a distributed k-anonymity for location based systems that needs neither a single trusted server nor users to trust each other.
+Their method can be applied on current used architectures.
+Their approach assume multiple server -- controled by different organizations that split users location knowledge where one server knows only a few part of all users locations.
+
+A user that want localized information request to the server if there are at least k users in his query area. If not the user enlarge the query area to reach the k - 1 users in area.
+User request pass through a location broker that hide the real location of the user.
+
+%%%% OK
+
+\subsection{Mobile Devices Emulation}
+
+%%%% END OK
+
+There does not exist a lot of research that take interest of emulation platforms.
+Researchers are generally more focus on a basic behaviour of the final system instead of exact behaviour, this is why they focus on simulations instead of emulation.
+Moreover, it exist some reasearch that propose emulation platforms.
+
+Wehrle et al.~\cite{DBLP:conf/simutools/WeingartnerLW11} introduce a network emulation architecture that focuses on network interactions.
+Their focus is on wireless communication software.
+They use ns-3 to simulate network transmissions as near as possible of the real behaviour.
+They provide an Android plug-in that use a an old version of the Android emulator.
+Our focus is more on general behaviour of data dissemination instead of real propagation and exchange through specific networks.
+
+% emulation or simulation ???
+Richerzhagen et al.~\cite{DBLP:conf/simutools/RicherzhagenSRS15} propose the Simonstrator framework that is usable on the Android platform.
+Their platform support Bluetooth and WiFi-Direct network interfaces but they do not provide the source code to test their tools and they do not respond to our information request.
+
+% see if it is really an emulation layer ???
+Henne et al.~\cite{henne2011towards} provide a simulation platform for security and privacy approach testing. 
+Their simulator simulate users interaction but does not provide an emulation layer to test the behaviour of an entire application running on the system.
+
+
+Finally, Bruno et al.~\cite{DBLP:journals/amsys/Bruno0F15} propose a solution that emulate WiFi-Direct for the Android platform.
+Their emulation solution is focus on WiFi-Direct communications.
+Their solution aims to facilitate the testing of applications.
+Moreover, play scenario of humans mobility is not so easy with their tool.
+Emulators can be deployed on a cloud infrastructure.
+Like our emulation platform, the tested application code must be refactor a little bit to import and initialize the WiFi-Direct layer.
+To control the emulation, we need to pass through a command line interface that is not convenient.
+
+
+
+% see if android emulator included ????
+Martin and Nurmi~\cite{DBLP:conf/mobiquitous/MartinN06} propose a generic simulation platform that simulates interactions in a ubiquity world.
+Their simulator is focused on primarily evaluations and scalability tests of an application functionality.
+
+% see if android emulator included ????
+Hetu et al.~\cite{DBLP:conf/vtc/HetuHP14} present a simulator that include traffic, network simulators and cluster of Android emulators to test Android applications.
+Their proposal require code refactoring to work.
+Furthermore, they do not provide source code of their work that could be very interesting for the crowd-sensing community to share.

@@ -1,0 +1,149 @@
+\begin{thebibliography}{10}
+
+\bibitem{DBLP:journals/computing/BoutetFGJK16}
+A.~Boutet, D.~Frey, R.~Guerraoui, A.~J{\'{e}}gou, and A.~Kermarrec.
+\newblock Privacy-preserving distributed collaborative filtering.
+\newblock {\em Computing}, 98(8):827--846, 2016.
+
+\bibitem{DBLP:conf/percom/BoutsisK13}
+I.~Boutsis and V.~Kalogeraki.
+\newblock Privacy preservation for participatory sensing data.
+\newblock In {\em PerCom}, pages 103--113. {IEEE} Computer Society, 2013.
+
+\bibitem{DBLP:journals/amsys/Bruno0F15}
+R.~Bruno, N.~Santos, and P.~Ferreira.
+\newblock Termite: Emulation testbed for encounter networks.
+\newblock {\em {ICST} Trans. Ambient Systems}, 2(5):e4, 2015.
+
+\bibitem{DBLP:conf/wd/ContiDMP13}
+M.~Conti, F.~Delmastro, G.~Minutiello, and R.~Paris.
+\newblock Experimenting opportunistic networks with wifi direct.
+\newblock In {\em Proceedings of the {IFIP} Wireless Days, {WD} 2013, Valencia,
+  Spain, November 13-15, 2013}, pages 1--6, 2013.
+
+\bibitem{DBLP:conf/percom/GroatEHHF12}
+M.~M. Groat, B.~Edwards, J.~Horey, W.~He, and S.~Forrest.
+\newblock Enhancing privacy in participatory sensing applications with
+  multidimensional data.
+\newblock In {\em PerCom}, pages 144--152. {IEEE} Computer Society, 2012.
+
+\bibitem{DBLP:conf/infocom/GuoZYF13}
+L.~Guo, C.~Zhang, H.~Yue, and Y.~Fang.
+\newblock A privacy-preserving social-assisted mobile content dissemination
+  scheme in dtns.
+\newblock In {\em {INFOCOM}}, pages 2301--2309. {IEEE}, 2013.
+
+\bibitem{henne2011towards}
+B.~Henne, C.~Szongott, and M.~Smith.
+\newblock Towards a mobile security \& privacy simulator.
+\newblock In {\em Open Systems (ICOS), 2011 IEEE Conference on}, pages 95--100.
+  IEEE, 2011.
+
+\bibitem{DBLP:conf/vtc/HetuHP14}
+S.~N. Hetu, V.~S. Hamishagi, and L.~Peh.
+\newblock Similitude: Interfacing a traffic simulator and network simulator
+  with emulated android clients.
+\newblock In {\em {IEEE} 80th Vehicular Technology Conference, {VTC} Fall 2014,
+  Vancouver, BC, Canada, September 14-17, 2014}, pages 1--7, 2014.
+
+\bibitem{DBLP:conf/middleware/JelasityGKS04}
+M.~Jelasity, R.~Guerraoui, A.~Kermarrec, and M.~van Steen.
+\newblock {The Peer Sampling Service: Experimental Evaluation of Unstructured
+  Gossip-Based Implementations}.
+\newblock In {\em Middleware}, volume 3231 of {\em Lecture Notes in Computer
+  Science}, pages 79--98. Springer, 2004.
+
+\bibitem{langheinrich2001privacy}
+M.~Langheinrich.
+\newblock Privacy by design-principles of privacy-aware ubiquitous systems.
+\newblock In {\em Ubicomp 2001: Ubiquitous Computing}, pages 273--291.
+  Springer, 2001.
+
+\bibitem{DBLP:conf/percom/LiC13}
+Q.~Li and G.~Cao.
+\newblock Providing privacy-aware incentives for mobile sensing.
+\newblock In {\em PerCom}, pages 76--84. {IEEE} Computer Society, 2013.
+
+\bibitem{DBLP:journals/tsmc/LilienB06}
+L.~Lilien and B.~K. Bhargava.
+\newblock {A scheme for privacy-preserving data dissemination}.
+\newblock {\em {IEEE} Trans. Systems, Man, and Cybernetics, Part {A}},
+  36(3):503--506, 2006.
+
+\bibitem{DBLP:conf/infocom/LuLSCS13}
+R.~Lu, X.~Lin, Z.~Shi, B.~Cao, and X.~S. Shen.
+\newblock {IPAD:} an incentive and privacy-aware data dissemination scheme in
+  opportunistic networks.
+\newblock In {\em {INFOCOM}}, pages 445--449. {IEEE}, 2013.
+
+\bibitem{DBLP:conf/mobiquitous/MartinN06}
+M.~Martin and P.~Nurmi.
+\newblock A generic large scale simulator for ubiquitous computing.
+\newblock In {\em 3rd Annual International {ICST} Conference on Mobile and
+  Ubiquitous Systems: Computing, Networking and Services, {MOBIQUITOUS} 2006,
+  San Jose, California, USA, July 17-21, 2006}, pages 1--3, 2006.
+
+\bibitem{DBLP:conf/icdcs/PrimaultMB15}
+V.~Primault, S.~B. Mokhtar, and L.~Brunie.
+\newblock Privacy-preserving publication of mobility data with high utility.
+\newblock In {\em {ICDCS}}, pages 802--803. {IEEE} Computer Society, 2015.
+
+\bibitem{DBLP:conf/simutools/RicherzhagenSRS15}
+B.~Richerzhagen, D.~Stingl, J.~R{\"{u}}ckert, and R.~Steinmetz.
+\newblock Simonstrator: simulation and prototyping platform for distributed
+  mobile applications.
+\newblock In {\em Proceedings of the 8th International Conference on Simulation
+  Tools and Techniques, Athens, Greece, August 24-26, 2015}, pages 99--108,
+  2015.
+
+\bibitem{DBLP:conf/icdcs/SinghUSV12}
+A.~Singh, G.~Urdaneta, M.~van Steen, and R.~Vitenberg.
+\newblock {Robust Overlays for Privacy-Preserving Data Dissemination over a
+  Social Graph}.
+\newblock In {\em {ICDCS}}, pages 234--244. {IEEE} Computer Society, 2012.
+
+\bibitem{DBLP:journals/sigkdd/Terrovitis11}
+M.~Terrovitis.
+\newblock Privacy preservation in the dissemination of location data.
+\newblock {\em {SIGKDD} Explorations}, 13(1):6--18, 2011.
+
+\bibitem{DBLP:conf/percom/Vergara-LaurensML14}
+I.~J. Vergara{-}Laurens, D.~Mendez, and M.~A. Labrador.
+\newblock Privacy, quality of information, and energy consumption in
+  participatory sensing systems.
+\newblock In {\em PerCom}, pages 199--207. {IEEE} Computer Society, 2014.
+
+\bibitem{DBLP:conf/simutools/WeingartnerLW11}
+E.~Weing{\"{a}}rtner, H.~vom Lehn, and K.~Wehrle.
+\newblock Device driver-enabled wireless network emulation.
+\newblock In {\em 4th International {ICST} Conference on Simulation Tools and
+  Techniques, SIMUTools '11, Barcelona, Spain, March 22 - 24, 2011}, pages
+  188--197, 2011.
+
+\bibitem{DBLP:conf/mobisec/Werner10}
+M.~Werner.
+\newblock A privacy-enabled architecture for location-based services.
+\newblock In {\em MobiSec}, volume~47 of {\em Lecture Notes of the Institute
+  for Computer Sciences, Social Informatics and Telecommunications
+  Engineering}, pages 80--90. Springer, 2010.
+
+\bibitem{DBLP:conf/mobisec/WiesnerDD11}
+K.~Wiesner, M.~D{\"{u}}rr, and M.~Duchon.
+\newblock Private pooling: {A} privacy-preserving approach for mobile
+  collaborative sensing.
+\newblock In {\em MobiSec}, volume~94 of {\em Lecture Notes of the Institute
+  for Computer Sciences, Social Informatics and Telecommunications
+  Engineering}, pages 52--63. Springer, 2011.
+
+\bibitem{DBLP:conf/percom/ZhongH09}
+G.~Zhong and U.~Hengartner.
+\newblock A distributed k-anonymity protocol for location privacy.
+\newblock In {\em PerCom}, pages 1--10. {IEEE} Computer Society, 2009.
+
+\bibitem{DBLP:conf/iccoms/ZhongL14}
+P.~Zhong and R.~Lu.
+\newblock {PAD:} privacy-preserving data dissemination in mobile social
+  networks.
+\newblock In {\em {ICCS}}, pages 243--247. {IEEE}, 2014.
+
+\end{thebibliography}
