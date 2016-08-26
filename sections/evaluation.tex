@@ -40,6 +40,17 @@ We want to be able to reproduce scenarii to be able to compare different approac
 
 reproducibility of the experiment with random seed.
 
+% Why AndroFleet ???
+
+For example, none of Android or iOS emulators support proximity wireless interactions and the only
+way is to test them is to use real devices.
+However, this method does not scale and cannot reproduce realistic events that can be encountered in real deployments. 
+Another limitation in the geo-privacy field is the incapacity to reproduce and compare experiments. Geo-privacy focuses its interest on the critical impact of location data on users privacy. 
+In this domains, the evaluation builds on shared datasets, which are used by the community to test and assess their algorithms. 
+However, these datasets are often altered for the purpose of evaluation and this modification of the input data prevents from further comparisons.
+Finally, in the mobile computing community, some simulation tools give the opportunity to simulate many devices, network and others. 
+However, these tools are not focused on crowd-sensing concerns like wireless proximity issues or the validation on a very large number of emulators running and moving at the same time.
+
 %%%% OK
 
 \subsection{Overview of AndroFleet}
