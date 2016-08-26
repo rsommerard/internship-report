@@ -33,6 +33,13 @@ L.~Guo, C.~Zhang, H.~Yue, and Y.~Fang.
   scheme in dtns.
 \newblock In {\em {INFOCOM}}, pages 2301--2309. {IEEE}, 2013.
 
+\bibitem{DBLP:conf/dais/HadererRS13}
+N.~Haderer, R.~Rouvoy, and L.~Seinturier.
+\newblock {Dynamic Deployment of Sensing Experiments in the Wild Using
+  Smartphones}.
+\newblock In {\em {DAIS}}, volume 7891 of {\em Lecture Notes in Computer
+  Science}, pages 43--56. Springer, 2013.
+
 \bibitem{henne2011towards}
 B.~Henne, C.~Szongott, and M.~Smith.
 \newblock Towards a mobile security \& privacy simulator.
@@ -59,6 +66,13 @@ M.~Langheinrich.
 \newblock In {\em Ubicomp 2001: Ubiquitous Computing}, pages 273--291.
   Springer, 2001.
 
+\bibitem{DBLP:conf/icde/LiLV07}
+N.~Li, T.~Li, and S.~Venkatasubramanian.
+\newblock t-closeness: Privacy beyond k-anonymity and l-diversity.
+\newblock In {\em Proceedings of the 23rd International Conference on Data
+  Engineering, {ICDE} 2007, The Marmara Hotel, Istanbul, Turkey, April 15-20,
+  2007}, pages 106--115, 2007.
+
 \bibitem{DBLP:conf/percom/LiC13}
 Q.~Li and G.~Cao.
 \newblock Providing privacy-aware incentives for mobile sensing.
@@ -75,6 +89,12 @@ R.~Lu, X.~Lin, Z.~Shi, B.~Cao, and X.~S. Shen.
 \newblock {IPAD:} an incentive and privacy-aware data dissemination scheme in
   opportunistic networks.
 \newblock In {\em {INFOCOM}}, pages 445--449. {IEEE}, 2013.
+
+\bibitem{DBLP:conf/icde/MachanavajjhalaGKV06}
+A.~Machanavajjhala, J.~Gehrke, D.~Kifer, and M.~Venkitasubramaniam.
+\newblock l-diversity: Privacy beyond k-anonymity.
+\newblock In {\em Proceedings of the 22nd International Conference on Data
+  Engineering, {ICDE} 2006, 3-8 April 2006, Atlanta, GA, {USA}}, page~24, 2006.
 
 \bibitem{DBLP:conf/mobiquitous/MartinN06}
 M.~Martin and P.~Nurmi.
@@ -101,6 +121,12 @@ A.~Singh, G.~Urdaneta, M.~van Steen, and R.~Vitenberg.
 \newblock {Robust Overlays for Privacy-Preserving Data Dissemination over a
   Social Graph}.
 \newblock In {\em {ICDCS}}, pages 234--244. {IEEE} Computer Society, 2012.
+
+\bibitem{DBLP:journals/ijufks/Sweene02}
+L.~Sweeney.
+\newblock k-anonymity: {A} model for protecting privacy.
+\newblock {\em International Journal of Uncertainty, Fuzziness and
+  Knowledge-Based Systems}, 10(5):557--570, 2002.
 
 \bibitem{DBLP:journals/sigkdd/Terrovitis11}
 M.~Terrovitis.

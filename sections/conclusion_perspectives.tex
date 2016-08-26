@@ -1,19 +1,28 @@
-Future work can implement a k-anonymity 
 
-k-anonymity decentralized implementation: share data only if other data of the same campaign are seen for example.
+%%%% OK
 
+In this report, we presented a data dissemination approach that disseminates data through users of a crowd-sensing platform.
+This approach is based on a notion of proximity between users exchange data--proximity that could be Physical, Social or Contextual.
+We provide an Android library called Foug\`ere that includes all the concepts presented in this report. 
+In addition, we provide a large-scale emulation platform called AndroFleet, which is useful to test--as near as possible of a real usage--Android applications in the context of crowd-sensing.
 
+% Fougère and AndroFleet perspectives
 
-Improvement can be made in Foug\`ere by studying treat and counter them.
-Take concern of what type of data is sended and adapt parameters like TTL or what kind of dissemination use.
+As perspectives, different threat models could be tested on applications using Foug\`ere to see in which cases our approach is efficient and improve it in the cases where it fails.
+Foug\`ere could take concern of what type of data is sent and auto adapt the parameters (e.g., the TTL value) in function of the data flow monitored.
+The Wi-Fi Direct could implement a new method base on decentralized k-anonymity where a data would be sent to the server only if k instances of this data have been received.
+Finally, we could include Foug\`ere in the APISENSE Android application to test his viability in the real world.
 
-Add a seen value to data to remote data to server only when we seen a Data an X number of time.
+Concerning AndroFleet emulator, it could be improved to cover a larger experimentation cases.
+We could enrich the implementation of the Wi-Fi Direct simulator for a better and larger support of the technology.
+Additionally, the Bluetooth technology could be simulated to offer more a proximity networking alternative.
+At last, localized Wi-Fi hotspot could be useful for some experimentations.
 
-Improvement can be made on the AndroFleet emulator tools by adding more emulation part like Bluetooth or Wi-Fi hotspot.
-Providing dataset pre-builded to be run in the emulator to offer comparable result.
-Rework on the Wi-Fi Direct implementation by making Android pre-build image providing WiFi-Direct included in the image. By including it directly in the Android framework.
-This will enable no source code refactor to be able to test an application.
-Just put an apk in a directory and run. 
+% Evaluation perspectives
 
+Future work to become is to run the evaluation protocol described in this report and interpret the results.
+Foug\`ere library and AndroFleet are functional and to be able to conduct the results, the only requirement is to well configured each part and run it on the testing server.
 
-Use the lib with APISENSE to test his viability in the real world.
+Last, but not least, this work will be submitted--at the end of the month of September--to the famous IEEE PerCom conference. 
+
+%%%% END OK
