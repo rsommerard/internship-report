@@ -59,15 +59,16 @@ AndroFleet is a large-scale emulation platform that allows to test our Android l
 The platform deploys and runs a large amount of emulators at the same time on a single or multiple hosts.
 AndroFleet allows to run GPS location scenarios that reproduced real users' movements.
 Lastly, the platform includes a Wi-Fi Direct simulator that allows the use of the Wi-Fi Direct in the Android emulators.
+To be able to use the Wi-Fi Direct simulator, the tested application need to be a little bit refactored by replacing the legacy imports with ours (we propose the exact same class name, only the package name is modified) and, initializing the Wi-Fi Direct manager with our new constructor.
 
 We choose to use the Docker technology because it allows to package and deploy containers easily on different hosts.
 Moreover, this technology allows to reproduce behaviours because each time a container is launched, a clean instance of the system is set.
 Finally, we use Weave, a technology working with Docker, which manages the containers' network.
 
 \begin{figure*}[h]
-	\centering
-	\includegraphics[width=\textwidth]{figures/androfleet}
-	\caption{\label{AndroFleet} AndroFleet architecture}
+    \centering
+    \includegraphics[width=\textwidth]{figures/androfleet}
+    \caption{\label{AndroFleet} AndroFleet architecture}
 \end{figure*}
 
 The architecture of AndroFleet, presented in the Figure~\ref{AndroFleet}, is composed of 5 elements: Master, Node, ServiceDiscovery, Social, Contextual and UI.

@@ -30,11 +30,20 @@ A key challenge in the crowd-sensing platforms is to avoid central trusted serve
 
 The current process of data collection is represented in the Figure~\ref{Threat} (the arrows represente the data flow).
 
+\begin{figure*}[h]
+    \centering
+    \includegraphics[width=0.4\textwidth]{figures/threat}
+    \caption{\label{Threat} APISENSE data collection threat}
+\end{figure*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 Let imagine a user that participate to a data collect campaign.
 Currently, the user produces data and sends it directly to a collect server.
 The server that collect the data can be the central server or, as exposed before, an external server managed by an organization.
-When the data send his data to the central server,
-In this scenario the server knows that Alice is the producer of the data that she sends.
+
+When the user send his data to the central server, the data can directly go to the central server or to an external one.
+In this case the server that receive the data knows that the user is iremediably the producer of the data.
 
 Even if we have a strong trust in the central server about keeping users' data safe, this server is a target of choice for an attacker.
 The security of the server can be compromized and users data can be stollen in a single attack on the server.
@@ -43,7 +52,7 @@ This kind of architecture is not safe because of its single rupture point.
 Moreover, in the case of APISENSE architecture, collect servers can be maintain by other organizations that could keep informations about users before sending their data to the trusted central server.
 This kind of treats is not acceptable in a privacy way.
 
-To address this scenario, we think-off a method where user 
+To address this scenario, we think-off a method where user is able to send data that he does not produce: data that come from other users.
 
 
 

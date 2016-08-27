@@ -5,39 +5,34 @@ In this section, we discuss the relevant literature about privacy-preserving dat
 
 \subsection{Privacy-Preserving Data Dissemination}
 
-%%%% END OK
+Privacy-preserving is a very popular research field.
+It exists several research works that propose solutions to enhance the privacy-preserving of users.
 
+The proposal of Lilien et al.~\cite{DBLP:journals/tsmc/LilienB06} use the trust concepts and propose a data self destroy method where the data are automatically degraded when threats are detected.
+During a data exchange, the users must trust themselves.
+There is always an entity that is weaker than the other when they must prove their identities.
+This is called the asymmetric trust relationship.
+Trust communications required to trade the privacy to process.
+Their approach is a protective one.
+They do not try to anonymize the data, but they allow a user to control the dissemination of his data.
+Unlike our approach, they do not propose to hide the producer of a data because the producer is known in the meta-data added with the data.
+Their technic uses a notion of trusted distance.
+Their solution uses a notion of trusted distance.
+They use it to degrade the quality of the data when the distance is too weak.
+Finally, they do not use their distance notion for the dissemination process like we do.
 
-Some reseach works enhence 
+Another work using the trust relationship concepts is introduced by Singh et al.~\cite{DBLP:conf/icdcs/SinghUSV12}.
+They propose a protocol that disseminates data among users that have trust relationships.
+They use the users' relationships to construct a new privacy preserving graph to disseminate data. 
+We use the principle of the social trust graph to disseminate data between trusted users.
 
-where the user is put on the center of the privacy-preserving of the system.
-Research works have been made in the way to enhance the power of the users and preserve the privacy of the data exchanged. 
-
-
-
-Lilien et al.~\cite{DBLP:journals/tsmc/LilienB06} propose a kind of data self destroyable by coupling sensitive data with metadata that degrade data in sensible environments.
-For their, in a data exchange, there are 1 entity that is weaker than the other. 
-They name it asymmetric trust relationship.
-The privacy is generally a trade for trust improvement when communicating.
-Their approach do not anonymize.
-Their focus is on privacy by adding meta-data that contain producer.
-In this case requester must be approved by producer to access the data.
-Their technic include a data self destroy concept that is automatically activated when treat is detected.
-Finally, they introduce a data evaporation principle using a notion of distance.
-They talk about trust distance and use it to degrade quality of data when distance is not sufficient.
-They do not use their distance notion for the dissemination process like we do.
-
-Singh et al.~\cite{DBLP:conf/icdcs/SinghUSV12} propose a protocol that disseminate data among users that have trust relationships.
-They use users relashionship to construct a new privacy preserving graph to disseminate data between users. 
-We use the principle of social trust graph to disseminate data between trusted users.
-
+Data disseminated through multiple users can take a lot of time to reach their final goals.
 P. Zhong and R.Lu~\cite{DBLP:conf/iccoms/ZhongL14} propose a data dissemination protocol called PAD.
-This protocol use principle called active user which select the most active users to deliver more efficiently a message.
-The proposition uses the Paillier cryptosystem to encrypt data.
-This cryptosystem provide a way to add encrypted data to a previous encrypted data without know it. 
-The protocol is tested in a simulator but not in a real case.
-
-%%%% OK
+This protocol uses a principle called active user that allows to select the most active users in the system to deliver more efficiently a data.
+The proposition uses the Paillier crypto-system to encrypt data that provides a way to add encrypted data to a previous one without knowing it. 
+With this process, there are able to group multiple data by keeping it safe.
+With this process, there are able to group multiple data by keeping it safe.
+They tested their protocol in a simulator but not in a real case.
 
 Another usage for data dissemination protocols is proposed by Boutet et al.~\cite{DBLP:journals/computing/BoutetFGJK16}.
 They propose a mechanism of collaborative filter that do not reveal the participants' filter preferences.
@@ -162,42 +157,23 @@ User request pass through a location broker that hide the real location of the u
 
 \subsection{Mobile Devices Emulation}
 
-%%%% END OK
-
-There does not exist a lot of research that take interest of emulation platforms.
-Researchers are generally more focus on a basic behaviour of the final system instead of exact behaviour, this is why they focus on simulations instead of emulation.
-Moreover, it exist some reasearch that propose emulation platforms.
+The number of emulation tools allowing proximity interactions through Wi-Fi Direct is poor.
+Generally, studies are validated on network simulators that are good, but are not close of a real use of an application.
 
 Wehrle et al.~\cite{DBLP:conf/simutools/WeingartnerLW11} introduce a network emulation architecture that focuses on network interactions.
 Their focus is on wireless communication software.
-They use ns-3 to simulate network transmissions as near as possible of the real behaviour.
-They provide an Android plug-in that use a an old version of the Android emulator.
-Our focus is more on general behaviour of data dissemination instead of real propagation and exchange through specific networks.
+They use the ns-3 tool to simulate network transmissions.
+They provide an Android plug-in that uses an old version of the Android emulator.
+Our focus is more on the general behaviour of data dissemination instead of the exact propagation and exchange through the network--which can be monitored with ns-3.
 
-% emulation or simulation ???
-Richerzhagen et al.~\cite{DBLP:conf/simutools/RicherzhagenSRS15} propose the Simonstrator framework that is usable on the Android platform.
-Their platform support Bluetooth and WiFi-Direct network interfaces but they do not provide the source code to test their tools and they do not respond to our information request.
+Bruno et al.~\cite{DBLP:journals/amsys/Bruno0F15} propose a solution that emulates Wi-Fi Direct for the Android platform.
+Their emulation solution is focused on Wi-Fi Direct communications and aims to facilitate the testing of applications.
+The platform is scalable because it can be deployed on a cloud infrastructure.
+Like our emulation platform, the tested application code must be refactored a little bit to import and initialize the Wi-Fi Direct layer.
+The drawbacks of their proposal are where we want to control the emulation, we need to pass through a command line interface that is not convenient and, be able to play humans' mobility scenarios is impossible.
 
-% see if it is really an emulation layer ???
-Henne et al.~\cite{henne2011towards} provide a simulation platform for security and privacy approach testing. 
-Their simulator simulate users interaction but does not provide an emulation layer to test the behaviour of an entire application running on the system.
+At last, Hetu et al.~\cite{DBLP:conf/vtc/HetuHP14} present a simulator that includes traffic, network simulators and a cluster of Android emulators to test Android applications.
+Like our proposal, their solution requires code refactoring to work.
+Unfortunately, they do not provide the source code of their work that could be very interesting for the crowd-sensing community to share.
 
-
-Finally, Bruno et al.~\cite{DBLP:journals/amsys/Bruno0F15} propose a solution that emulate WiFi-Direct for the Android platform.
-Their emulation solution is focus on WiFi-Direct communications.
-Their solution aims to facilitate the testing of applications.
-Moreover, play scenario of humans mobility is not so easy with their tool.
-Emulators can be deployed on a cloud infrastructure.
-Like our emulation platform, the tested application code must be refactor a little bit to import and initialize the WiFi-Direct layer.
-To control the emulation, we need to pass through a command line interface that is not convenient.
-
-
-
-% see if android emulator included ????
-Martin and Nurmi~\cite{DBLP:conf/mobiquitous/MartinN06} propose a generic simulation platform that simulates interactions in a ubiquity world.
-Their simulator is focused on primarily evaluations and scalability tests of an application functionality.
-
-% see if android emulator included ????
-Hetu et al.~\cite{DBLP:conf/vtc/HetuHP14} present a simulator that include traffic, network simulators and cluster of Android emulators to test Android applications.
-Their proposal require code refactoring to work.
-Furthermore, they do not provide source code of their work that could be very interesting for the crowd-sensing community to share.
+%%%% END OK
