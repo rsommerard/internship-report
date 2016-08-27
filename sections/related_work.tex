@@ -99,6 +99,8 @@ Approach implying central server that knows everybody's location and determine c
 
 An other one will be that users self determine cloaked area in function of other users in his environment (require to trust in other users).
 
+Location data are the type of data that can leak the most of information about a user.
+
 Approach with central server have a drawback because this is a single point of failure
 
 Anonymization is the name like of data transformation that try to preserve users' privacy.
@@ -106,43 +108,42 @@ Location data expose the user to substancial privacy treat.
 These kind of data are reveal a lot of informations about users like health informations, path habits, etc.
 The identity of a user can be determined with anonymized location data.
 
-Terrovitis~\cite{DBLP:journals/sigkdd/Terrovitis11} provide an overview of attack scenarii, data transformations and privacy garanties on location data.
-Method well known like k-anonymity and l-diversity can hide user and prevent against linkage.
-His focus is on privacy preserving data dissemination scenarii.
-The predominant paradigm required third party server that provide alternative location instead of real user location.
-The other solution is to send multiple location to hide the real one.
-Solution include a trusted server that works as proxy to hide real user location.
-Solution without trusted server required an obfuscation on the user side.
-In the case where users can communicate with each others, two scenarios emerge. One where user does not trust the server nor the other users and one where users trust each other but does not trust the server.
-This second scenario is our case of study.
-Data transformation and protection methods. 
-A trade-off need to be found between data accuracy and privacy.
-Technics exist like spatial cloaking that generalize a location to an area or for example transformation technics that split the real location with an other.
+%%%% OK
+
+%%%% END OK
+
+Terrovitis~\cite{DBLP:journals/sigkdd/Terrovitis11} provide an overview of attack scenarios, data transformations and privacy garanties on location data.
+The author remind the existing k-anonymity and l-diversity methods that allow to hide users and prevent against linkage.
+In term of Geo-privacy, the predominant paradigm required third party server that provides alternative location instead of real users location.
+Another solutions send multiple location to hide the real one.
+These solutions include trusted servers that work as proxy to hide real users location.
+The solutions without trusted servers required an obfuscation method on the user side.
+In the case where users can communicate with each other, 2 scenarios arise. 
+The first is where a user does not trust the server nor the other users and the second where the users trust each other but do not trust the server--this second scenario is our case of study.
+Existing technics are based on spatial cloaking that generalize a location to an area or, the transformation technics split the real location with an other.
 Others technics uses dummy locations where the real user location is a subset of the location area requested.
+For the data transformation and protection methods, a trade-off need to be found between data accuracy and privacy.
 Finally, generally location data are associated with timestamps.
 This last method can be applicable in off-line application that does not required real time informations.
 He shows that systems without an anonymizer are close to use the creation of equivalence classes or spatial cloaking.
 
-Werner~\cite{DBLP:conf/mobisec/Werner10} propose an approach to protect users privacy in location based services.
-He propose an approach to exchange location data.
-Exchange is made between two users that want to know where are each other and receive notifications where their are close.
-He made it by sending encrypted data to server with identifier that correspond to a user.
-System uses asymetric encryption.
-Only receiver can decrypt it and show the location.
-He propose a solution where company want to offer promotion for example.
-His solution is to generalize the user location to a larger area and recover all services in the area.
-Then user filter it and get only services that are close to him.
-Users exchange public keys via sms or qrcode.
-No third server is required to deliver these keys.
-
-Zhong and Hengartner~\cite{DBLP:conf/percom/ZhongH09} propose a distributed k-anonymity for location based systems that needs neither a single trusted server nor users to trust each other.
-Their method can be applied on current used architectures.
-Their approach assume multiple server -- controled by different organizations that split users location knowledge where one server knows only a few part of all users locations.
-
-A user that want localized information request to the server if there are at least k users in his query area. If not the user enlarge the query area to reach the k - 1 users in area.
-User request pass through a location broker that hide the real location of the user.
-
 %%%% OK
+
+Always with location data, the proposal of Werner~\cite{DBLP:conf/mobisec/Werner10} is a method to protect the users' privacy in location based services.
+The author proposes an approach to exchange location data.
+His first example is where 2 users that want to know where are each other and receive a notification where there are close.
+Werner made it by sending encrypted data--using an asymmetric encryption--to a server with an identifier that correspond to a user.
+This method required that the sender knows the public key of the receiver to encrypt the data.  
+The users can exchange public keys via SMS or QRCode before which does not required a server to deliver these keys.
+Only the receiver can decrypt the data and show the location of the sender.
+Werner proposes another example where a company wants to offer promotions.
+His solution is to generalize the user location to a larger area and recover all services in the area.
+Then, the user receives all available services that can be filtered to get only the services that are close to him.
+
+Where k-anonymity methods are generally realized on the server side, Zhong and Hengartner~\cite{DBLP:conf/percom/ZhongH09} propose a distributed k-anonymity for location based systems that needs neither a single trusted server nor users to trust each other.
+Their method can be applied on current used architectures and assume multiple servers.
+The servers can be controlled by external organizations that split knowledge of users' locations where each server knows only a few parts of all users' locations of the system.
+In their proposal, the users' requests pass through location brokers that hide the real location of the users.
 
 \subsection{Mobile Devices Emulation}
 
