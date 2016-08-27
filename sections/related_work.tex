@@ -62,43 +62,32 @@ They compare the convergence and the randomness of different gossip based approa
 
 \subsection{Privacy in MCS}
 
-%%%% END OK
+Many applications in participatory sensing systems are not used because of privacy concerns. 
+The main challenge is to apply privacy-preserving method without losing the quality of the data.
 
-Many application in participatory sensing systems are not used because of privacy concerns. 
-One of the main problem is to keep the quality of a data.
-The most important challenge in participatory sensing system is to preserve the privacy of the users.
+In this field, Vergara-Laurens et al.~\cite{DBLP:conf/percom/Vergara-LaurensML14} propose a privacy-preserving mechanism to anonymize data without losing the data quality.
+Their approach is focused on Geo-located data and is not decentralized
+They work on Point Of Interest of data (e.g., the user home place, his workplace, etc.).
+Each time a data is reported by a user, a proxy server recalculates a new fuzzy Point Of Interest according to the data value that is reported.
 
-Vergara-Laurens et al.~\cite{DBLP:conf/percom/Vergara-LaurensML14} propose  a privacy-preserving mechanism to anonymize data without lost the data quality.
-Their approach is not decentralized.
-Their method calculate POI dynamically.
-Each time a data is report by a user, a proxy server recalculate a new POI according to the data value that is reported.
-
-Boutsis and Kalogeraki~\cite{DBLP:conf/percom/BoutsisK13} introduce LOCATE, their participatory sensing middleware for the Android platform that preserve users privacy -- in particular for the location data.
-They say that current solution that try to preserve privacy in location-based databases are centralized.
-These solutions need to be made on the server side like APISENSE for example.
-Participatory systems try to maintain the privacy on the user side, before sending the data to the server.
+Boutsis and Kalogeraki~\cite{DBLP:conf/percom/BoutsisK13} introduce a participatory sensing middleware for the Android platform that preserve users' privacy (in particular for the location data).
+Unlike current centralized solutions like the APISENSE platform, their solution is decentralized.
+Like our approach, their proposal maintains the privacy on the user side before sending the data to the server.
 Their work is based on misco, a MapReduce system for mobile devices.
-Their tool does not take part of proximity exchange technology like bluetooth or WiFi-Direct.
-It uses WiFi and 3G networks to exchange data.
+Their tool does not take interest of proximity exchange technologies like Bluetooth or Wi-Fi Direct, it uses Wi-Fi and 3G networks to exchange data.
 
-%
-Users may not want to contribute due to possible privacy leakage and lack of incentives.
-%
+The users may not want to contribute due to possible privacy leakage and lack of incentives.
+To fix this issue, Li and Cao~\cite{DBLP:conf/percom/LiC13} propose a participatory reward system for the collaborative mobile sensing systems.
+They provide a scheme where the users earn credits when they contribute to the system.
+Earn credits can be converted to real money or invested in data collects.
+Their scheme rewards and protects users that contribute to the system.
+Their solution is implemented in 2 ways: one using a trusted third party server and the second without.
 
-Li and Cao~\cite{DBLP:conf/percom/LiC13} propose a participatory reward system for the collaborative mobile sensing systems.
-They provide a schemes where users earn credits when they contribute.
-These credit can be exchange after by converting it to real money or pay for data collect.
-Their schemes protect users that contribute to the system.
-They propose 2 solutions: one with a trusted third party and the second without.
-
-Groat et al.~\cite{DBLP:conf/percom/GroatEHHF12} present a scheme for participatory sensing that preserve users privacy for multidimensional data by using negative surveys.
-Their method perturb the data that hide the real user location.
-This kind of approach permit to not encrypt data before sending it.
-This permit a gain of data transmition cost.
-Their approach enable to parametrize privacy and accuracy.
-Their approach is useful in the case of data accuracy can be degraded.
-
-%%%% OK
+At last, Groat et al.~\cite{DBLP:conf/percom/GroatEHHF12} present a scheme for participatory sensing that preserves users' privacy for multidimensional data by using negative surveys.
+Their method perturbs the data which hide the real user location.
+The proposal allows to not encrypt data before sending it, which permits a gain in term of data transmition cost.
+Their approach allows to customize privacy and accuracy.
+Their proposal is useful in the case of data accuracy can be degraded.
 
 \subsection{Location-Based Privacy}
 
@@ -112,7 +101,7 @@ An other one will be that users self determine cloaked area in function of other
 
 Approach with central server have a drawback because this is a single point of failure
 
-Anonimization is the name like of data transformation that try to preserve users' privacy.
+Anonymization is the name like of data transformation that try to preserve users' privacy.
 Location data expose the user to substancial privacy treat.
 These kind of data are reveal a lot of informations about users like health informations, path habits, etc.
 The identity of a user can be determined with anonymized location data.
