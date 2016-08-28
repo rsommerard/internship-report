@@ -1,9 +1,12 @@
 
-In this section we talk about the context underlighing our contribution and present the motivations that lead to our approach.
+%%%% OK
+
+In this section we discuss the context underlining our contribution and present the motivations that led to our approach.
 
 \subsection{Context: Mobile Crowd-Sensing Platforms}
 
 The crowd-sensing platforms have a large application domain.
+
 Applications encompass application performance monitoring (\emph{e.g.}, OpenSignal\footnote{\url{http://opensignal.com}}), environment monitoring (air quality\footnote{\url{http://citizensensor.cc}}), etc.
 
 Privacy-preserving in this context is a key challenge to address.
@@ -13,22 +16,21 @@ At last, if a crowd-sensing platform does not care about the privacy of its user
 To the best of our knowledge, privacy-preserving techniques are often deployed on the server side~\cite{DBLP:conf/mobisys/CorneliusKKPST08}~\cite{DBLP:conf/dais/HadererRS13}.
 For instance, for the Geo-located data, there can be anonymized \emph{a posteriori}~\cite{DBLP:conf/icdcs/PrimaultMB15}.
 
-The context to this proposal is based on the APISENSE crowd-sensing platform that provide an Android application to collect data from users that subscribe to data collect campaign and contribute with their mobile devices.
-Because the platform apply privacy-preserving technics on the server side, it does not protect from malicious behaviors during the upload phase.
-The data that come from a user are unmodified and are his own data.
-This is the data that were produced by this specific user.
-A user is therefore forced to trust the server that receives his data.
+The context to this proposal is based on the APISENSE crowd-sensing platform that provide an Android application to collect data from users.
+Those users subscribe to data collect campaign and contribute with their mobile devices.
+Because the platform applies privacy-preserving techniques on the server side, it does not protect from malicious behaviors during the upload phase.
+The data coming from a user are unmodified and are his own data.
+Those data were produced by this specific user.
+A user is, therefore, forced to trust the server that receives his data.
 
 \subsection{Motivations: Data Dissemination Threats}
 
 In the APISENSE platform, a collect server can be managed by an external organization.
-The collect servers are called honneycomb.
-The way of having a single trusted server that handle all users data sending is not practicable.
-Having multiple server is a requirement in this kind of platform and we can say that no server can be trusted.
 
-A key challenge in the crowd-sensing platforms is to avoid central trusted server that present a single point of failure that need to be address.
+Having multiple server is a requirement because a single server cannot handles all users' data that are sent during a collect campaign.
+Moreover, for the users' privacy, no server can be trusted.
 
-The current process of data collection is represented in the Figure~\ref{Threat} (the arrows represente the data flow).
+A key challenge in the crowd-sensing platforms is to avoid central trusted server that present a single point of failure that need to be addressed.
 
 \begin{figure*}[h]
     \centering
@@ -36,27 +38,28 @@ The current process of data collection is represented in the Figure~\ref{Threat}
     \caption{\label{Threat} APISENSE data collection threat}
 \end{figure*}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The current process of data collection is represented in the Figure~\ref{Threat}.
+Note that the arrows represent the flow of the data.
 
-Let imagine a user that participate to a data collect campaign.
+Let assume a user that participates to a data collect campaign.
 Currently, the user produces data and sends it directly to a collect server.
-The server that collect the data can be the central server or, as exposed before, an external server managed by an organization.
+The server that collects the data can be the central server or, as exposed before, an external server managed by an organization.
+When the user sends his data to the central server, the data can directly go to the central server or to an external one.
+The user has no control on the server selection.
+The external server is a relay server that forward their received data to the central server later.
+In this case the server that receives the data knows irremediably that those data are produced by the user that send it.
+The threat here is that we have no guarantee with the forwarding of the external server.
+We can't know if it sends all data that it received.
+Moreover, the external server can store the data collected before forwarding it.
+In this case, it is able to construct a knowledge database with all the data collected during the time and compromise the user privacy.
+Furthermore, even if we have a strong trust in the both servers, if all data are regrouping on the central server, this server is a target of choice for an attacker because it keeps the entire data of the system.
+The security of the server can be compromised and users' data can be stolen in a single attack made on the server.
+This type of architecture is not safe because of it implies a single rupture point.
+This kind of threats is not viable for privacy concerns.
 
-When the user send his data to the central server, the data can directly go to the central server or to an external one.
-In this case the server that receive the data knows that the user is iremediably the producer of the data.
-
-Even if we have a strong trust in the central server about keeping users' data safe, this server is a target of choice for an attacker.
-The security of the server can be compromized and users data can be stollen in a single attack on the server.
-This kind of architecture is not safe because of its single rupture point.
-
-Moreover, in the case of APISENSE architecture, collect servers can be maintain by other organizations that could keep informations about users before sending their data to the trusted central server.
-This kind of treats is not acceptable in a privacy way.
-
-To address this scenario, we think-off a method where user is able to send data that he does not produce: data that come from other users.
-
-
-
-%%%% OK
+To address this threat scenario, we think-of a method where a user is able to send his data that he does not produce: data that come from other users.
+With this decentralized approach, the data associated to a user on the server can be produced by any other else user on the system.
+Even if the data are leaked, the privacy of a user is not compromised.
 
 \subsection{Goals: Enabling Decentralized Dissemination}
 
