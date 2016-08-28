@@ -1,63 +1,40 @@
-Applications develop for mobile platforms can be tricky to test.
-It exists simulations, but this does not guarantee that the model will be applicable in practice.
-Standard emulators are limited by their lack of support for WiFi-Direct and large-scale deployment.
-In this section, we present our own large-scale emulation platform called AndroFleet that provides us a good testing tool for our approach.
-
-Pourquoi wi-fi direct simulation ??? (pas de base dans android emulator)
-
-
-When comes the evaluation time, three way offer to us.
-- real devices
-- simulators
-- emulators
-
-A lot of proposition are simulation platform instead of emulation platform.
-Simulation platform are the way when we need performance and rapidity in testing.
-Emulation platform are more to test as near as possible an application in a real case.
-
-
-Simulation platform permit to test an approach faster than emulation platform because 
-
-First, we have the simulator tool family.
-Simulators aim to reproduct a the basic--or a substract--behaviour of a system.
-
-The simulators aims to findely reproduct a behaviour.
-For instance, a WiFi simulator can reproduct with a high fidelity the WiFi signal behaviour like signal degradation in function of the environment.
-
-The second, we have the emulator tool family.
-Emulators aim to exactly replicate the behaviour of a system.
-An emulator is a complete replication of the system emulated.
-The emulators are closer to the system than simulators.
-
-Why emulation over simulation ?
-
-Because it does not exist emulators that match or can be adapted to our requirements, we develop AndroFleet, our large-scale emulation platform.
-
-We want an emulation platform instead of simulation because we want to test our approach as near as possible of a real case.
-
-We want to be able to reproduce scenarii to be able to compare different approaches.
-
-
-reproducibility of the experiment with random seed.
-
-% Why AndroFleet ???
-
-For example, none of Android or iOS emulators support proximity wireless interactions and the only
-way is to test them is to use real devices.
-However, this method does not scale and cannot reproduce realistic events that can be encountered in real deployments. 
-Another limitation in the geo-privacy field is the incapacity to reproduce and compare experiments. Geo-privacy focuses its interest on the critical impact of location data on users privacy. 
-In this domains, the evaluation builds on shared datasets, which are used by the community to test and assess their algorithms. 
-However, these datasets are often altered for the purpose of evaluation and this modification of the input data prevents from further comparisons.
-Finally, in the mobile computing community, some simulation tools give the opportunity to simulate many devices, network and others. 
-However, these tools are not focused on crowd-sensing concerns like wireless proximity issues or the validation on a very large number of emulators running and moving at the same time.
 
 %%%% OK
+
+In this section, we present our own large-scale emulation platform called AndroFleet that provides us a good testing tool for our approach and the evaluation protocol that we will conduct.
+
+Applications developed for the mobile platforms are difficult to test.
+When comes the time of the evaluation, 3 ways offers to developers:
+\begin{itemize}
+    \item testing on real devices
+    \item testing on simulators
+    \item testing on emulators
+\end{itemize}
+
+The first case, testing an application on a real device, is the perfect case because the behaviour of the application is the real one.
+However, in the context of crowd of device, this method does not scale and is not practicable and it will really difficult to reproduce users' movement.
+It cannot reproduce realistic events that can be encountered in real deployments. 
+This method is not the best for a large-scale testing.
+
+The second case is to test the application on simulators.
+The simulation platforms are very good when the testing require performance and rapidity of execution, but they do not guarantee that the model simulated is applicable in practice because simulation are just mimicking platforms.
+The simulators aim to reproduce the basic--or a subtract--behaviour of a system.
+
+At last, the case that we choose for our platform is the emulation.
+The emulators differ from simulations because they aim to exactly replicate the behaviour of a system.
+This allows to test the application as near as possible of a real usage.
+The drawback of the default emulator proposed by Android is that it does not support proximity wireless interactions.
+
+To sum up, because of a lack of support for Wi-Fi Direct and large-scale deployment of the standard emulator, we choose to develop an emulation platform that is closer to the real behaviour of the system than the simulation.
+This emulation platform includes a Wi-Fi Direct simulation layer.
+Because we are interested in the data exchange of the data, we do not have a need of exact behaviour for the Wi-Fi Direct.
 
 \subsection{Overview of AndroFleet}
 
 AndroFleet is a large-scale emulation platform that allows to test our Android library.
 The platform deploys and runs a large amount of emulators at the same time on a single or multiple hosts.
 AndroFleet allows to run GPS location scenarios that reproduced real users' movements.
+The experiments are reproducible, which allows to compare different approaches.
 Lastly, the platform includes a Wi-Fi Direct simulator that allows the use of the Wi-Fi Direct in the Android emulators.
 To be able to use the Wi-Fi Direct simulator, the tested application need to be a little bit refactored by replacing the legacy imports with ours (we propose the exact same class name, only the package name is modified) and, initializing the Wi-Fi Direct manager with our new constructor.
 
@@ -95,13 +72,19 @@ This element generates contextual information for each Node.
 
 The UI is an optional part that can be used to visualize the GPS position of each Android emulator on a map.
 
-A GeoLife parser is included and it permits to recreate files that are used in our experiment.
+A GeoLife parser is included.
+It permits to recreate files that are used in our experiment.
 
 \subsection{Evaluation Protocol}
 
 %%%% END OK
 
-First
+
+We project to evaluate our approach with our AndroFleet platform.
+
+
+
+
 Then, we evaluate the scenarii runner on the well known GeoLife dataset.
 We choose Geolife because it is the reference database used by researchers in the geo-location privacy research.
 Geolife is a GPS trajectory dataset collected by 178 different users in a period of over 4 years. 
@@ -125,4 +108,4 @@ About 90\% of data logged are spaced under 5 seconds.
 
 so we process Geolife data to regroup traces 
 
-\subsection{Evaluation Results}
+%\subsection{Evaluation Results}
