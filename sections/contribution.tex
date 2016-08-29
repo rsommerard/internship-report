@@ -78,5 +78,7 @@ This TTL guarantees a minimum number of transmissions before the data is reporte
 Each time the data is sent, the sender decrease the TTL of this data.
 If the TTL value is 0, the data is sent to the end-server.
 The TTL value certify that a data will be at least sent to other users a specific number of times.
+The initial must be randomly choosen to guarantee the privacy.
+We choose a random value for the TTL to guarantee that a device receiving the data is not able to determine if the data was already sent before.
 
 %%%% END OK
