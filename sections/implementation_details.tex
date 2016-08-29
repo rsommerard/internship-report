@@ -53,8 +53,6 @@ For more details about this technology, a good study made by Conti et al.~\cite{
 
 \subsection{Peer Sampling Service}
 
-%%%% END OK
-
 We provide our dissemination solution as a library that can be used in applications that required a data dissemination layer before sending data to a server.
 
 The architecture of the library is exposed on the Figure~\ref{Fougere}.
@@ -65,34 +63,23 @@ The architecture of the library is exposed on the Figure~\ref{Fougere}.
 	\caption{\label{Fougere} Foug\`ere architecture}
 \end{figure*}
 
-The library includes a database that regroups all data that will be disseminated, 3 default modules that are relative to our proposal: Wi-Fi Direct, Social and Contextual and a Distance layer that take choices during the dissemination process.
+The library includes a database that regroups all data that will be disseminated, 3 default modules that are relative to our proposal: Wi-Fi Direct (Physical), Social and Contextual and a Distance class that takes choices during the dissemination process.
 
 Foug\`ere has a database that contains all data to disseminate.
-Those data come from the application that pass it the data that it want to disseminate through Foug\`ere.
-
+This is the application implementing Foug\`ere that fill the database by passing it to the Foug\`ere instance.
 A data cannot be in multiple module at a time.
 
-The Distance class is interacting with each modules.
-This is the class that is in charge to select to whom the data will be sended.
-For instance, for the Contextuel module, the Distance layer will select to which users the data will be sended.
-Each 
- dissemination statistique to be able to take decision
-When a module is able to disseminate data, it request to Distance the permission to disseminate.
+The Distance class is linked with each module.
+This is the class that is in charge to determine if the data will be sent to the user.
+When a module is able to disseminate data, it requests to the Distance class the ability to disseminate.
+According to the status of the process, the module sends it to the Distance which update the user distance value.
 
-For the Wi-Fi Direct module, Distance keep a 
-
-Distance is the part that decide whith whom the data will be sended.
-For instance, for the Social module, the distance 
-
-Each module need to be able to receive data because in Foug\`ere, the global data are dispatched at a specific time (e.g., each day at midnight) through the enabled modules.
-
-When the dispatch process is started, all data that are in each modules are recover an regrouped in global database to be redispatched.
+Each module needs to be able to receive data because in Foug\`ere, the global data are dispatched at a specific time (e.g., each day at midnight) through the enabled modules.
+When the dispatch process is started, all data that are in each module are recovered and regrouped in the global database to be re-dispatched.
 By this way, we reshuffle the data and allow to disseminate with another method.
-For instance, a data can be send the first time xith the Wi-Fi Direct layer and a second time with the Social one.
+For instance, a data can be sent the first time with the Wi-Fi Direct layer and a second time with the Social one.
 
-The only requirement is to initialize a Foug\`ere Object in the application that will use the dissemination.
-By default, the 3 modules are enabled: Wi-Fi Direct, Social and Contextual.
-Our implementation allow to to disable or enable modules and allow the possibility to add a new one by implementing the specific interface named FougereModule.
+The Figure~ref{WiFiDiServInt} illustrates the process of the Physical type dissemination using the Wi-Fi Direct technology.
 
 \begin{figure*}[h]
 	\centering
@@ -100,9 +87,11 @@ Our implementation allow to to disable or enable modules and allow the possibili
 	\caption{\label{WiFiDiServInt} Wi-Fi Direct service interactions}
 \end{figure*}
 
+As explained above, the Wi-Fi Direct provides a service discovery that allows to provide information during the discovery. 
+In this example, the devices A, B, C, D and E provide the data dissemination service where F provides another one.
+This indicates that F does not participate in the dissemination and no request will be sent to it by the others.
+Where devices are close enough, they can communicate and exchange data.
+The data are exchanged and pass through multiple devices.
+When the requirements of a data are all reached, the device sends this data to the end-server 
 
-
-
-
-We provide the Disseminator interface that enable developer to implement his own disseminator.
-The requirements induced by the Disseminator interface is the weight that will be used to calculate the data repartition.
+%%%% END OK
