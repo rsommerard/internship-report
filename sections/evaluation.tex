@@ -77,35 +77,23 @@ It permits to recreate files that are used in our experiment.
 
 \subsection{Evaluation Protocol}
 
-%%%% END OK
-
-
 We project to evaluate our approach with our AndroFleet platform.
 
-
-
-
-Then, we evaluate the scenarii runner on the well known GeoLife dataset.
-We choose Geolife because it is the reference database used by researchers in the geo-location privacy research.
-Geolife is a GPS trajectory dataset collected by 178 different users in a period of over 4 years. 
+In the Geo-privacy field, it exists many datasets of real human GPS traces.
+One of those is the Microsoft’s GeoLife dataset and is largely used to conduct evaluations.
+GeoLife is a GPS trajectory dataset collected from 182 different users in a period of over 3 years. 
 This dataset contains a total of 17,621 trajectories.
+Because this is the reference dataset, we will process the traces to include it in AndroFleet.
 
-Each trace is timestamped.
+AndroFleet takes a Tick value that allow to configure the time between each location change (if there is one for a user).
+We set this Tick value to 5 seconds because in GeoLife, there is about 90\% of data logged that are spaced under 5 seconds.
+So each 5 seconds, each Node in AndroFleet will play the next step in its scenario.
+This will reproduce the users' movement. 
 
-We process the traces and see if WiFi-Direct can appear with these.
+For the data dissemination testing, we will attribute to each user 5 data and run the emulation.
+Because each data has an identifier, it will be possible to study the dissemination of a specific data.
 
-Geolife dataset
-We run experiments using the Microsoft’s Geolife
-dataset that is a GPS trajectory dataset.
-This dataset is made of 182 users for a period of over three years.
-In this dataset, a GPS trajectory is represented by a
-sequence of time-stamped points.
-Each points contains a latitude, longitude and altitude value.
-The distance cover by the dataset is about 1.2 million kilometers.
-The total duration of timestamp traces is about 48.000 hours.
-About 90\% of data logged are spaced under 5 seconds.
+We will add an end-server to AndroFleet to collect data.
+We will study the link-ability of the data and see if it will be possible to deduce the producer of those.
 
-
-so we process Geolife data to regroup traces 
-
-%\subsection{Evaluation Results}
+%%%% END OK
