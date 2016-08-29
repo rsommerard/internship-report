@@ -6,16 +6,19 @@ In this section, we introduce the notion that is used in Fou\`ere\footnote{Foug\
 \subsection{Neighboring Sampling}
 
 Foug\`ere includes 3 different types of neighbor: \textbf{Physical} neighbors, \textbf{Social} neighbors and \textbf{Contextual} neighbors.
+\\
 
 The Physical type uses the physical proximity of the users to disseminate the data.
 It is considered the safest type because the process is opportunist: the data are transmitted only if the user meets another one and is unpredictable.
 This neighbor type uses the proximity technologies like Wi-Fi Direct or Bluetooth.
+\\
 
 The Social type uses the existing relationship between the users.
 For instance the data can be disseminated through the family members, the friends or the colleagues.
 This empowers the sender by letting him add his trusted users.
 This disseminate data to the users to whom the sender has a strong confident.
 We assume that the server does not know what are the Social relations that exist between the users.
+\\
 
 At last, the Contextual type represents the users of a same collect campaign.
 For instance, the users of the same experiment are able to send data to each other though this layer. 
@@ -25,12 +28,14 @@ This is, the less trusted type.
 
 In addition to the neighbor types that provide different level of trust with the categories, our proposal includes a distance notion.
 This notion is used to dynamically adapt the dissemination.
+\\
 
 The process describes below is a process that an instance of an application that uses Foug\`ere.
 The user distance value is local.
 The users' values are not shared through the system.
 For instance, a user present in 2 Foug\`ere instances--2 instances means 2 users using the application--has not the same distance value in the 2 instances.
 It depends on the disseminations made by the Foug\`ere instance.
+\\
 
 Each user with whom it is possible to disseminate the data has a distance value that represent the probability to send a data to the user.
 The distance value is limited from 0 to 1, which represents a probability from 0\% to 100\% to send the data.
@@ -38,13 +43,16 @@ Each user has a default distance value of 0.5, which represents a probability of
 The distance value change during the time.
 This value is divided by 2 each time an exchange is successfully made by the user.
 In every other cases, the distance value is not changed.
+\\
 
 For instance, imagine a user that has a distance value of 0.25. 
 A random number is drawn from 0 to 100.
 If the drawn number is less than 25, the data is sent to the user and the distance value for this user is divided by 2.
 The score of the user become 0.125.
+\\
 
 The distance value allows to have less chance to resend data to the same user over time and improve the dissemination of the data through different users.
+\\
 
 However, the distance value of user trends to reach 0.
 To prevent this issue, we add a minimum value, which reset to 0.5 the distance value of a user when his score pass under this value.
@@ -52,6 +60,7 @@ To prevent this issue, we add a minimum value, which reset to 0.5 the distance v
 \subsection{Probabilist Data Dissemination}
 
 We propose to add probability to the dissemination for a better scrambling of the data.
+\\
 
 First, we decide to allocate the dissemination to the different neighbor types.
 By this, we divide the dissemination and use the benefits of each dissemination types.
@@ -59,6 +68,7 @@ For instance, the Physical type is an opportunist one and allow the impossibilit
 If the user does not meet another user, no data will be sent.
 A contrary, the Contextual allows a safer way in term of delivery of the data.
 It is more probable that the data will be sent to a user with the Contextual than the Physical.
+\\
 
 We choose to set these allocation values:
 \begin{itemize}
@@ -70,8 +80,10 @@ We choose to set these allocation values:
 With this dilution of the data, we increase the unpredictability of the data transmission.
 For instance, a data can be disseminated the first round by the Social type and next by the Physical one.
 Because the Physical type provides an opportunistic dissemination that is safer in terms of privacy, we involve it by assigning it a better ratio of data allocation.
+\\
 
 Second, we introduced the distance value above that avoid to always disseminate the data to the same users.
+\\
 
 Finally, we propose to add a Time to Live (TTL) value for each data.
 This TTL guarantees a minimum number of transmissions before the data is reported to the end-server.

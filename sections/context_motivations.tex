@@ -6,8 +6,8 @@ In this section we discuss the context underlining our contribution and present 
 \subsection{Context: Mobile Crowd-Sensing Platforms}
 
 The crowd-sensing platforms have a large application domain.
-
-Applications encompass application performance monitoring (\emph{e.g.}, OpenSignal\footnote{\url{http://opensignal.com}}), environment monitoring (air quality\footnote{\url{http://citizensensor.cc}}), etc.
+The applications encompass application performance monitoring (\emph{e.g.}, OpenSignal\footnote{\url{http://opensignal.com}}), environment monitoring (air quality\footnote{\url{http://citizensensor.cc}}), etc.
+\\
 
 Privacy-preserving in this context is a key challenge to address.
 The platforms must balance to find an equilibrium between the level of the users' privacy-preserving and the quality of the data that are collected.
@@ -15,6 +15,7 @@ Indeed, if a crowd-sensing platform put a lot of consideration in the privacy pr
 At last, if a crowd-sensing platform does not care about the privacy of its users, these last may not want to contribute to it.
 To the best of our knowledge, privacy-preserving techniques are often deployed on the server side~\cite{DBLP:conf/mobisys/CorneliusKKPST08}~\cite{DBLP:conf/dais/HadererRS13}.
 For instance, for the Geo-located data, there can be anonymized \emph{a posteriori}~\cite{DBLP:conf/icdcs/PrimaultMB15}.
+\\
 
 The context to this proposal is based on the APISENSE crowd-sensing platform that provide an Android application to collect data from users.
 Those users subscribe to data collect campaign and contribute with their mobile devices.
@@ -26,9 +27,11 @@ A user is, therefore, forced to trust the server that receives his data.
 \subsection{Motivations: Data Dissemination Threats}
 
 In the APISENSE platform, a collect server can be managed by an external organization.
+\\
 
 Having multiple server is a requirement because a single server cannot handles all users' data that are sent during a collect campaign.
 Moreover, for the users' privacy, no server can be trusted.
+\\
 
 A key challenge in the crowd-sensing platforms is to avoid central trusted server that present a single point of failure that need to be addressed.
 
@@ -40,6 +43,7 @@ A key challenge in the crowd-sensing platforms is to avoid central trusted serve
 
 The current process of data collection is represented in the Figure~\ref{Threat}.
 Note that the arrows represent the flow of the data.
+\\
 
 Let assume a user that participates to a data collect campaign.
 Currently, the user produces data and sends it directly to a collect server.
@@ -56,6 +60,7 @@ Furthermore, even if we have a strong trust in the both servers, if all data are
 The security of the server can be compromised and users' data can be stolen in a single attack made on the server.
 This type of architecture is not safe because of it implies a single rupture point.
 This kind of threats is not viable for privacy concerns.
+\\
 
 To address this threat scenario, we think-of a method where a user is able to send his data that he does not produce: data that come from other users.
 With this decentralized approach, the data associated to a user on the server can be produced by any other else user on the system.
