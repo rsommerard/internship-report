@@ -1,81 +1,82 @@
 
 %%%% OK
 
-%%%% END OK
-
-
-We propose a data dissemination protocol that scrambles the data through the users' system before sending it to an end-server.
-
-
-
-A FougereModule must have a ratio value.
-This ratio value is used by Foug\`ere when it allocate data to the different modules.
-The sum of module ratios activated cannot be up to 100.
-Default module ratios are 60 for the WiFiDirect module, 30 for the Social module and 10 for the Contextual module -- 60\% of total data to the WiFiDirect module.
-These ratios can be dynamically adapted during the application runtime.
-
-
-Social and Contextual uses legacy technologies to disseminate data.
-Uses 3G or Wi-Fi to disseminate these last.
-
-
-
-We develop a library called \textit{Foug\`ere}\footnote{Foug\`ere is a french word that translate to "fern" in english. This plant symbolize the trust.}.
-Foug\`ere come with a new principle of distance calculation to auto-adapt the data dissemination.
+In this section, we introduce the notion that is used in Fou\`ere\footnote{Foug\`ere is a french word that translates to "fern" in English. This plant symbolizes the trust.}, our data dissemination library that scrambles the data through the users' system before sending it to an end-server.
 
 \subsection{Neighboring Sampling}
 
-Foug\`ere uses a principle of neighbor.
-The library can have various types of neighbors.
-Our implementation includes 3 different types of neighbors: \textbf{Physical} neighbors (Wi-Fi Direct, Bluetooth), \textbf{Social} neighbors (Familly, Friends, colleagues) and \textbf{Contextual} neighbors (other participants to the same experiment).
+Foug\`ere includes 3 different types of neighbor: \textbf{Physical} neighbors, \textbf{Social} neighbors and \textbf{Contextual} neighbors.
 
-We want to be sure that the data will be propagated.
-We assume that the server don't know what are the Social relation that exist between different users.
-Trusted social peers are only known by the user.
+The Physical type uses the physical proximity of the users to disseminate the data.
+It is considered the safest type because the process is opportunist: the data are transmitted only if the user meets another one and is unpredictable.
+This neighbor type uses the proximity technologies like Wi-Fi Direct or Bluetooth.
 
-30\% of data are sended by the Social
+The Social type uses the existing relationship between the users.
+For instance the data can be disseminated through the family members, the friends or the colleagues.
+This empowers the sender by letting him add his trusted users.
+This disseminate data to the users to whom the sender has a strong confident.
+We assume that the server does not know what are the Social relations that exist between the users.
 
-
-Explain Contextual -> data collect campaign.
+At last, the Contextual type represents the users of a same collect campaign.
+For instance, the users of the same experiment are able to send data to each other though this layer. 
+This is, the less trusted type.
 
 \subsection{Distance Evaluation}
 
-Data to disseminate are allocate to the different types available.
-The allocation is made in function of each type score.
-Type score are regularly updated in function of the previous dissemination result.
+In addition to the neighbor types that provide different level of trust with the categories, our proposal includes a distance notion.
+This notion is used to dynamically adapt the dissemination.
 
-For instance, if the user meet very rarely other devices, the score is adapted and a lower amount of data will be allocated to the Wi-Fi Direct.
+The process describes below is a process that an instance of an application that uses Foug\`ere.
+The user distance value is local.
+The users' values are not shared through the system.
+For instance, a user present in 2 Foug\`ere instances--2 instances means 2 users using the application--has not the same distance value in the 2 instances.
+It depends on the disseminations made by the Foug\`ere instance.
 
-We can choose, for a better privacy, to select what part enabled. For instance, we can enable only dissemination by physical way.
+Each user with whom it is possible to disseminate the data has a distance value that represent the probability to send a data to the user.
+The distance value is limited from 0 to 1, which represents a probability from 0\% to 100\% to send the data.
+Each user has a default distance value of 0.5, which represents a probability of 50\% to send the data to the user.
+The distance value change during the time.
+This value is divided by 2 each time an exchange is successfully made by the user.
+In every other cases, the distance value is not changed.
 
-A score is calculated to allocate data that will be disseminated.
+For instance, imagine a user that has a distance value of 0.25. 
+A random number is drawn from 0 to 100.
+If the drawn number is less than 25, the data is sent to the user and the distance value for this user is divided by 2.
+The score of the user become 0.125.
 
-At the allocation phase, for each data we choose a random number with the probability relative to each type score. 
+The distance value allows to have less chance to resend data to the same user over time and improve the dissemination of the data through different users.
 
-Each time a data is sended with success, the score for the specific type is incremented.
+However, the distance value of user trends to reach 0.
+To prevent this issue, we add a minimum value, which reset to 0.5 the distance value of a user when his score pass under this value.
 
 \subsection{Probabilist Data Dissemination}
 
+We propose to add probability to the dissemination for a better scrambling of the data.
 
+First, we decide to allocate the dissemination to the different neighbor types.
+By this, we divide the dissemination and use the benefits of each dissemination types.
+For instance, the Physical type is an opportunist one and allow the impossibility to predict to which other user the data will be sent and when.
+If the user does not meet another user, no data will be sent.
+A contrary, the Contextual allows a safer way in term of delivery of the data.
+It is more probable that the data will be sent to a user with the Contextual than the Physical.
 
-A Time to Live (TTL) value is define for each data.
-This TTL warrants a minimum number of transmission before the data is reported to the server.
+We choose to set these allocation values:
+\begin{itemize}
+    \item 60\% of the data are sent through the Physical.
+    \item 30\% of the data are sent through the Social.
+    \item 10\% of the data are sent through the Contextual.
+\end{itemize}
 
-The data are encrypted with an asymmetric encryption by using the server public key to prevent from curious devices. Only the server can read the data and see his content.
+With this dilution of the data, we increase the unpredictability of the data transmission.
+For instance, a data can be disseminated the first round by the Social type and next by the Physical one.
+Because the Physical type provides an opportunistic dissemination that is safer in terms of privacy, we involve it by assigning it a better ratio of data allocation.
 
-Each data has a dissemination value.
-This value is used to determine the number of sending the data will be.
+Second, we introduced the distance value above that avoid to always disseminate the data to the same users.
 
-60\% of data go in WiFi-Direct pool, 30\% in Social pool and 10\% in the Contextal pool.
-Why ? because we divide the dissemination. Without this repartition, if no data are sended by WiFi-Direct, we avoid the fact that all data are disseminate through a single road.
-We let a chance that data are realocated to WiFi-Direct and disseminated through that channel.
+Finally, we propose to add a Time to Live (TTL) value for each data.
+This TTL guarantees a minimum number of transmissions before the data is reported to the end-server.
+Each time the data is sent, the sender decrease the TTL of this data.
+If the TTL value is 0, the data is sent to the end-server.
+The TTL value certify that a data will be at least sent to other users a specific number of times.
 
-We send the same data to, at least, 3 different neighbors.
-
-At the startup, each neighbor has a chance of 0.5 to send a data to it. Each time an interaction is made with a neighbor, the chance to send it a data decrease. If no interaction is decided, we increase the chance for the next time.
-
-A notion of history is include to avoid multiple exchange with the same neighbor in a time window.
-
-When a data is received, it is store in the main database and will be schedule to different module at an other time.
-
-Data that are sent to another peer as keep in the current bucket and will be re-allocated the next time.
+%%%% END OK

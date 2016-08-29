@@ -57,8 +57,42 @@ For more details about this technology, a good study made by Conti et al.~\cite{
 
 We provide our dissemination solution as a library that can be used in applications that required a data dissemination layer before sending data to a server.
 
-The single requirement is to initialize a Foug\`ere Object.
+The architecture of the library is exposed on the Figure~\ref{Fougere}.
+
+\begin{figure*}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{figures/fougere}
+	\caption{\label{Fougere} Foug\`ere architecture}
+\end{figure*}
+
+The library includes a database that regroups all data that will be disseminated, 3 default modules that are relative to our proposal: Wi-Fi Direct, Social and Contextual and a Distance layer that take choices during the dissemination process.
+
+Foug\`ere has a database that contains all data to disseminate.
+Those data come from the application that pass it the data that it want to disseminate through Foug\`ere.
+
+A data cannot be in multiple module at a time.
+
+The Distance class is interacting with each modules.
+This is the class that is in charge to select to whom the data will be sended.
+For instance, for the Contextuel module, the Distance layer will select to which users the data will be sended.
+Each 
+ dissemination statistique to be able to take decision
+When a module is able to disseminate data, it request to Distance the permission to disseminate.
+
+For the Wi-Fi Direct module, Distance keep a 
+
+Distance is the part that decide whith whom the data will be sended.
+For instance, for the Social module, the distance 
+
+Each module need to be able to receive data because in Foug\`ere, the global data are dispatched at a specific time (e.g., each day at midnight) through the enabled modules.
+
+When the dispatch process is started, all data that are in each modules are recover an regrouped in global database to be redispatched.
+By this way, we reshuffle the data and allow to disseminate with another method.
+For instance, a data can be send the first time xith the Wi-Fi Direct layer and a second time with the Social one.
+
+The only requirement is to initialize a Foug\`ere Object in the application that will use the dissemination.
 By default, the 3 modules are enabled: Wi-Fi Direct, Social and Contextual.
+Our implementation allow to to disable or enable modules and allow the possibility to add a new one by implementing the specific interface named FougereModule.
 
 \begin{figure*}[h]
 	\centering
@@ -68,12 +102,7 @@ By default, the 3 modules are enabled: Wi-Fi Direct, Social and Contextual.
 
 
 
-\begin{figure*}[h]
-	\centering
-	\includegraphics[width=0.7\textwidth]{figures/fougere}
-	\caption{\label{Fougere} Foug\`ere architecture}
-\end{figure*}
 
-It is possible to disable module or add new one.
+
 We provide the Disseminator interface that enable developer to implement his own disseminator.
 The requirements induced by the Disseminator interface is the weight that will be used to calculate the data repartition.
