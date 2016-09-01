@@ -1,7 +1,7 @@
 
 %%%% OK
 
-In this section, we introduce the notion that is used in Fou\`ere\footnote{Foug\`ere is a french word that translates to "fern" in English. This plant symbolizes the trust.}, our data dissemination library that scrambles the data through the users' system before sending it to an end-server.
+In this section, we introduce the notion that is used in Foug\`ere\footnote{Foug\`ere is a french word that translates to "fern" in English. This plant symbolizes the trust.}, our data dissemination library that scrambles the data through the users' system before sending it to an end-server.
 
 \subsection{Neighboring Sampling}
 
@@ -26,11 +26,11 @@ This is, the less trusted type.
 
 \subsection{Distance Evaluation}
 
-In addition to the neighbor types that provide different level of trust with the categories, our proposal includes a distance notion.
+In addition to the neighbor types that provide different levels of trust with the categories, our proposal includes a distance notion.
 This notion is used to dynamically adapt the dissemination.
 \\
 
-The process describes below is a process that an instance of an application that uses Foug\`ere.
+The process described below is a process that an instance of an application follows when using Foug\`ere.
 The user distance value is local.
 The users' values are not shared through the system.
 For instance, a user present in 2 Foug\`ere instances--2 instances means 2 users using the application--has not the same distance value in the 2 instances.
@@ -38,7 +38,7 @@ It depends on the disseminations made by the Foug\`ere instance.
 \\
 
 Each user with whom it is possible to disseminate the data has a distance value that represent the probability to send a data to the user.
-The distance value is limited from 0 to 1, which represents a probability from 0\% to 100\% to send the data.
+The distance value is normalized from 0 to 1, which represents a probability from 0\% to 100\% to send the data.
 Each user has a default distance value of 0.5, which represents a probability of 50\% to send the data to the user.
 The distance value change during the time.
 This value is divided by 2 each time an exchange is successfully made by the user.
@@ -66,7 +66,7 @@ First, we decide to allocate the dissemination to the different neighbor types.
 By this, we divide the dissemination and use the benefits of each dissemination types.
 For instance, the Physical type is an opportunist one and allow the impossibility to predict to which other user the data will be sent and when.
 If the user does not meet another user, no data will be sent.
-A contrary, the Contextual allows a safer way in term of delivery of the data.
+A contrary, the Contextual type allows a safer way in term of delivery of the data.
 It is more probable that the data will be sent to a user with the Contextual than the Physical.
 \\
 
