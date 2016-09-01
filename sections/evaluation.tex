@@ -35,7 +35,7 @@ Because we are interested in the data exchange of the data, we do not have a nee
 
 \subsection{Overview of AndroFleet}
 
-AndroFleet is a large-scale emulation platform that allows to test our Android library.
+\textsc{AndroFleet} is a large-scale emulation platform that allows to test our Android library.
 The platform deploys and runs a large amount of emulators at the same time on a single or multiple hosts.
 AndroFleet allows to run GPS location scenarios that reproduced real users' movements.
 The experiments are reproducible, which allows to compare different approaches.
@@ -53,7 +53,7 @@ Finally, we use Weave, a technology working with Docker, which manages the conta
     \caption{\label{AndroFleet} AndroFleet architecture}
 \end{figure*}
 
-The architecture of AndroFleet, presented in the Figure~\ref{AndroFleet}, is composed of 5 elements: Master, Node, ServiceDiscovery, Social, Contextual and UI.
+The architecture of AndroFleet, presented in the Figure~\ref{AndroFleet}, is composed of 5 elements: \textsf{Master}, \textsf{Node}, \textsf{ServiceDiscovery}, \textsf{Social}, \textsf{Contextual} and \textsf{UI}.
 All these elements are packaged and regrouped in a single Docker container.
 This container includes an Android emulator that will be run by the Node.
 \\
@@ -84,7 +84,7 @@ This element generates contextual information for each Node.
 The UI is an optional part that can be used to visualize the GPS position of each Android emulator on a map.
 \\
 
-A GeoLife parser is included.
+A parser for the famous GPS trajectory dataset called GeoLife is included.
 It permits to recreate files that are used in our experiment.
 \\
 
