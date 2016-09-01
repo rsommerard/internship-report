@@ -34,13 +34,12 @@ P. Zhong and R.Lu~\cite{DBLP:conf/iccoms/ZhongL14} propose a data dissemination 
 This protocol uses a principle called active user that allows to select the most active users in the system to deliver more efficiently a data.
 The proposition uses the Paillier crypto-system to encrypt data that provides a way to add encrypted data to a previous one without knowing it. 
 With this process, there are able to group multiple data by keeping it safe.
-With this process, there are able to group multiple data by keeping it safe.
 They tested their protocol in a simulator but not in a real case.
 \\
 
 Another usage for data dissemination protocols is proposed by Boutet et al.~\cite{DBLP:journals/computing/BoutetFGJK16}.
 They propose a mechanism of collaborative filter that do not reveal the participants' filter preferences.
-Instead of only sending the data to other participants, a data dissemination protocol can filter the data--according to the predefined participant rules--that pass through the different participants.
+Instead of only sending the data to other participants, a data dissemination protocol can filter the data, according to the predefined participant rules, that pass through the different participants.
 Their mechanism is capable to automatically drop the data that could leak a bit too much information about a user.
 \\
 
@@ -54,8 +53,8 @@ Private Pooling, the collaborative sensing protocol proposed by Wiesner et al.~\
 Their protocol reaches to break the linkability of the data to a specific user.
 They do not discuss possible advantages of using proximity technology like Bluetooth or WiFi-Direct.
 Their approach requires a network connection to work.
-Unlike our approach, their case of study required a very short responds time.
-Their requirement is not important for us because, in a case where the data are Geo-located, introducing a delay in the exchange can be better in a privacy-preserving view.
+Unlike our approach, their case study required a very short response time.
+Their requirement is not important for us because, in a case where the data are geo-located, introducing a delay in the exchange can be better in a privacy-preserving view.
 \\
 
 In the cases where the data transmission delay is not important, the users of the system can exchange and store temporarily the data received by the others before resend it later.
@@ -114,7 +113,7 @@ The author reminds the existing k-anonymity and l-diversity methods that allow t
 These methods are largely used, but are on the server side of the platforms.
 A predominant technique used third party servers that provide alternative locations instead of real users locations.
 This solution includes trusted servers that work as proxy to hide real users' locations.
-The solutions where the servers can't be trusted required obfuscation methods on the user side.
+The solutions where the servers cannot be trusted required obfuscation methods on the user side.
 For instance, a user can send multiple locations to servers to hide his real position
 There are 2 scenarios arising in the case where the users are allowed to communicate with each other.
 The first is where a user does not trust the server, nor the other users.
