@@ -7,7 +7,7 @@ Android provides an implementation of the Wi-Fi Direct technology that we use to
 
 \subsection{Wi-Fi Direct}
 
-As exposed on the Figure~\ref{WiFiVsWiFiDi}, where (a) the Wi-Fi working technology and (b) the Wi-Fi Direct working technology, this last allows to connect two devices together without the requirement of an Access Point.
+As exposed in Figure~\ref{WiFiVsWiFiDi}, where (a) the Wi-Fi working technology and (b) the Wi-Fi Direct working technology, this last allows to connect two devices together without the requirement of an Access Point.
 The Wi-Fi Direct uses peer-to-peer connection types--devices communicate directly together.
 We choose the Wi-Fi Direct technology for our proximity dissemination because it covers a wider area than other proximity technologies like the Bluetooth (e.g., Wi-Fi Direct range is more than 600 feet contrary to Bluetooth that is at least 200 feet).
 Furthermore, the Wi-Fi Direct technology offers speeds of up to 250 Mbps while Bluetooth is around 25 Mbps.
@@ -47,7 +47,7 @@ A device is kept in the history an hour to prevent multiple sending of the same 
 \\
 
 The Wi-Fi Direct implementation requires a user interaction the first time where two devices try to connect each others.
-This user's acknowledgement can be seen as a drawback in an opportunistic networking because it cuts the flow of hidden interactions between each device, but this interaction requested only the first time a connection is made between two devices.
+This user's acknowledgement can be seen as a drawback in an opportunistic network because it cuts the flow of hidden interactions between each device, but this interaction requested only the first time a connection is made between two devices.
 If the user accepts the connection request, the following connection with the same device will be automatic and do not ask again for user interaction until the next system reboot or Wi-Fi Direct cleaning groups.
 A cleaning function that automatically removes the Wi-Fi Direct groups each time the Wi-Fi Direct is started.
 We think that the user acknowledgment is important because it enhances the privacy awareness of the user by informing him that his data will be exchanged with another device.
@@ -60,7 +60,7 @@ For more details about this technology, a good study made by Conti et al.~\cite{
 We provide our dissemination solution as a library that can be used in applications that required a data dissemination layer before sending data to a server.
 \\
 
-The architecture of the library is exposed on the Figure~\ref{Fougere}.
+The architecture of the library is exposed in Figure~\ref{Fougere}.
 
 \begin{figure*}[h]
 	\centering
@@ -68,7 +68,7 @@ The architecture of the library is exposed on the Figure~\ref{Fougere}.
 	\caption{\label{Fougere} Foug\`ere architecture}
 \end{figure*}
 
-The library includes a database that regroups all data that will be disseminated, 3 default modules that are relative to our proposal: Wi-Fi Direct (Physical), Social and Contextual and a Distance class that takes choices during the dissemination process.
+The library includes a database that groups all data that will be disseminated, 3 default modules that are relative to our proposal: \texttt{Wi-Fi Direct} (Physical), \texttt{Social} and \texttt{Contextual} and a \texttt{Distance} class that take choices during the dissemination process.
 \\
 
 Foug\`ere has a database that contains all data to disseminate.
