@@ -26,7 +26,7 @@ A user is, therefore, forced to trust the server that receives his data.
 
 \subsection{Motivations: Data Dissemination Threats}
 
-In the APISENSE platform, a collect server can be managed by an external organization.
+In the APISENSE platform, a collect server, also called Honeycomb, can be managed by an external organization.
 \\
 
 Having multiple servers is a requirement because a single server cannot handle all users' data that are sent during a collect campaign.
@@ -37,32 +37,24 @@ A key challenge in the crowd-sensing platforms is to avoid central trusted serve
 
 \begin{figure*}[h]
     \centering
-    \includegraphics[width=0.4\textwidth]{figures/threat}
+    \includegraphics[width=0.5\textwidth]{figures/threat}
     \caption{\label{Threat} APISENSE data collection threat}
 \end{figure*}
 
 The current process of data collection is represented in Figure~\ref{Threat}.
-Note that the arrows represent the flow of the data.
 \\
 
 Let assume a user that participates to a data collect campaign.
 Currently, the user produces data and sends it directly to a collect server.
-The server that collects the data can be the central server or, as exposed before, an external server managed by an organization.
-When the user sends his data to the central server, the data can directly go to the central server or to an external one.
-The user has no control on the server selection.
-%The external server is a relay server that forward their received data to the central server later.
-In this case the server that receives the data knows irremediably that those data are produced by the user that send it.
-The threat here is that we have no guarantee with the forwarding of the external server.
-We cannot know if it sends all data that it received.
-Moreover, the external server can store the data collected before forwarding it.
-In this case, it is able to construct a knowledge database with all the data collected during the time and compromise the user privacy.
-Furthermore, even if we have a strong trust in the both servers, if all data are grouped on the central server, this server is a target of choice for an attacker because it keeps the entire data of the system.
-The security of the server can be compromised and users' data can be stolen in a single attack made on the server.
-This type of architecture is not safe because of it implies a single rupture point.
+The user has no control on the server selection that will receive the data.
+The server that receives the data knows irremediably that those data are produced by the user that sends it.
+The server that collects the data can be a trusted server or, as exposed before, an external server managed by an organization that can be potentially malicious.
+The threat on a malicious server is that it can use the data against the user and deduct privacy information about it.
+Furthermore, even if the data are collected by a trusted collect server, the threat can come from a malicious person that listen the transmission channels or steals the data stored on the server.
 This kind of threats is not viable for privacy concerns.
 \\
 
-To address this threat scenario, we think of a method where a user is able to send data that he does not produce: data that come from other users.
+To address these threat scenarios, we think of a method where a user is able to send data that he does not produce: data that come from other users.
 With this decentralized approach, the data associated to a user on the server can be produced by any other else user on the system.
 Even if the data are leaked, the privacy of a user is not compromised.
 

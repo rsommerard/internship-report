@@ -39,8 +39,17 @@
 \usepackage[colorinlistoftodos]{todonotes}
 \usepackage{setspace}
 \usepackage{hyperref}
+\usepackage{afterpage}
+
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
 
 \begin{document}
+
+	\afterpage{\blankpage}
 	
 	\begin{titlepage}
 		
@@ -104,7 +113,8 @@
 		\vfill % Fill the rest of the page with whitespace
 		
 	\end{titlepage}
-	
+
+	\afterpage{\blankpage}
 	
 	\begin{abstract}
 		% Largely inspired by our Ubimob16 paper
@@ -116,8 +126,10 @@
 		\\
 		To assess such a strategy, we also report on our initiative to deploy a large-scale middleware platform to emulate and control a crowd of devices. In particular, we claim that an assessment by simulation is not acceptable for such a kind of contribution and that the mobile engineering community requires a more realistic evaluation testbed.
 	\end{abstract}
-	
+
 	\newpage
+
+	\afterpage{\blankpage}
 	
 	\tableofcontents
 	
